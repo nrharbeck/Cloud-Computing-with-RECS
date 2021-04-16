@@ -1,0 +1,116 @@
+.logo {
+    margin: 0px 0px 10px 10px;
+}
+
+.logo--nickharbeck {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #78787a;
+    margin-left: 30px;
+}
+
+.logo--nickharbeck a, a:hover {
+    text-decoration: none;
+}
+
+.selected-menu-item {
+    font-weight: bold;
+}
+
+
+#menubar {
+    z-index: 1;
+    float: right;
+    margin: 20px 100px 5px 20px
+}
+
+#menu {
+    float: right;
+    margin: 10px 10px 5px 10px
+}
+
+#menu li {
+    float: left;
+    margin: 5px 5px 5px 5px;
+    list-style: none;
+    padding: 20px 10px 0px 10px;
+}
+
+#menu li a {
+    color: #78787a;
+}
+
+
+h1, h2 {
+    text-align: center;
+}
+
+
+#datasources {
+    padding-top: 40px;
+    font-size: 9pt;
+}
+
+.col-md-10 div{
+    margin: 0 auto;
+}
+
+#pagelogos {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+#pagecenter {
+    float: center;
+}
+
+#pagelogos h4 {
+    text-align: center;
+}
+
+#pagelogos img{
+    width: 95%;
+    margin: auto;
+    align-content: center;
+}
+
+#pagelogos img {
+    -webkit-filter: saturate(100%);
+            filter: saturate(100%);}
+  
+#pagelogos img:hover {
+      -webkit-filter: saturate(90%);
+              filter: saturate(90%);
+            margin-top: -5px;}
+
+#piecharts div {
+    margin-top: -30px;
+}
+
+#Military_Details div div {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+#Healthcare_Details div div {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+#Education_Details div div {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+div.flags div {
+    margin: 50px 0 20px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+
