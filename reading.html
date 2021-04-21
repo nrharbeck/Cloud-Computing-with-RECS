@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RECS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine&family=Roboto+Mono:wght@200&family=Source+Serif+Pro:wght@300&display=swap"
+      rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  </head>
+
+  <body>
+
+  <!--- Start of navbar-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <button type="button" class="navbar-toggler  ml-3" data-toggle="collapse" data-target="#navbarNav" aria-control="navbarNav">
+      <span class="navbar-toggler-icon "></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item px-3 active"><a class="nav-link link-special text-capitalize font-weight-bold text-light" href="index.html">Home</a></li>
+        <!----Dropdown-->
+                <li class="nav-item px-3 active"><a class="nav-link link-special text-capitalize font-weight-bold text-light" href="code.html">Codebook</a></li>
+          <li class="nav-item px-3 active"><a class="nav-link link-special text-capitalize font-weight-bold text-light" href="reading.html">Further reading</a></li>
+           </ul>
+      </div>
+  </nav>
+  <!--End of navbar-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 id="title1">Tools and Archictecture</h1>
+        <article>The tools and cloud services used in this project are Tensorflow which provided the frameowrk to train our neural network, AWS EC2 instances serving as computer power to train and test the model
+          and AWS S3 for storing json data files and for hosting the static website</article>
+  
+      </div>
+    </div>
+  </div>
+
+<!----Teasorflow icon-->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-lg-4 col-sm-10 mx-auto mb-5">
+  <div class="card" style="width :30rem">
+    <span class="iconify mx-5" data-icon="logos-tensorflow" data-inline="false" width=200></span>
+    <h1 class="text-secondary display-2">TensorFlow</h1>
+    <div class="card-header bg-dark p-3">
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Data Preprocessing</li>
+      <li class="list-group-item">Model Training</li>
+      <li class="list-group-item">Model Testing</li>
+      <li class="list-group-item">Tensorflow.js</li>
+    </ul>
+  </div>
+  </div>
+
+
+<!-----s3 Icon-->
+<div class="col-lg-4 col-sm-10 mx-auto mb-5">
+<div class="card" style="width :30rem">
+  <span class="iconify mx-5" data-icon="logos:aws-s3" data-inline="false" width=200></span>
+  <h1 class="text-secondary display-2">S3</h1>
+  <div class="card-header bg-dark p-3">
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">hosting static website</li>
+    <li class="list-group-item">object storage for static scripts</li>
+    <li class="list-group-item">json data storage</li>
+  </ul>
+</div>
+</div>
+
+
+<!-----EC2 Icon-->
+<div class="col-lg-4 col-sm-10 mx-auto mb-5">
+<div class="card" style="width :30rem">
+  <span class="iconify mx-5" data-icon="logos:aws-ec2" data-inline="false" width=200></span>
+  <h1 class="text-secondary display-2">EC2</h1>
+  <div class="card-header bg-dark p-3">
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Hosting python scripts</li>
+    <li class="list-group-item">Hosting jupyter notebook</li>
+    <li class="list-group-item">Update model and load to s3</li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 id="title1">Project Implementation</h1>
+     <article>Using tensorflow.js, we were able to convert the model's output into a dense JavaScript model called into our website using a content 
+       delivery network.<br>
+       We also created a user friendly dropdown using the most important features in the model. Users can input overall square footage, square footage that needed heating, 
+       square footage that needed cooling and total number of A/C Units. This returns a prediction of the average energy consumption usage for that household by US Census division.
+       Connecting the model on an EC2 instance directly to an S3 folder called by the HTML page allows you to update the current website everytime the model is trained. 
+       Another useful S3 property is to enable versioning which allows you to see different versions of the same object helping you to keep track of your objects.
+      We also updated the bucket policy to allow public access to this static website which is the goal here.
+       Another useful future expansion will be to host the static website using S3 and AWS CloudFront. CloudFront uses AWS edge locations to facilitate quick access to your users 
+       in other parts of the world. To ensure very high availability, we can keep a backup of our static website in another region because S3 is a regional resource. 
+
+     </article>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<footer class="bg-dark mt-5 px-5" id="darkie">
+    <div class="container-fluid">
+      <div id="datasources">
+        <p class="text-center text-light text-capitalize font-weight-bold">Energy consumption data comes from the U.S. Energy Information Administraion (EIA)'s 2015 <a href="https://www.eia.gov/consumption/residential/index.php">Residential Energy Consumption Survey (RECS)</a>.</p>
+  </div> 
+  </footer>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="ANN.js"></script>
+  
+  </body>
+  </html>
